@@ -2,10 +2,7 @@ package com.example.emarket.controllers;
 
 import com.example.emarket.models.entities.Customer;
 import com.example.emarket.services.CustomerService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,4 +39,13 @@ public class CustomerController {
         customerService.save(customer);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteCustomer(@PathVariable String id) {
+        try {
+            customerService.deleteCustomerById(id);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

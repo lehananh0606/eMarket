@@ -1,8 +1,8 @@
 package com.example.emarket.exceptions;
 
-public class UserNotFoundException extends Exception{
+public class CustomerNotFoundException extends Exception{
     @Override
     public String getMessage() {
-        return "User not found";
+        return "Customer not found";
     }
 }
